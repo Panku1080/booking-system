@@ -1,0 +1,150 @@
+Here’s a complete and professional `README.md` for your **booking-system** Django project. You can copy-paste this into a new file called `README.md` in your project folder and push it to GitHub.
+
+---
+
+### 📄 `README.md`
+
+```markdown
+# 🗓️ Booking System API
+
+A Django REST API for managing weekly availability and non-overlapping time-slot bookings. Built for efficient scheduling between users and guests.
+
+---
+
+## 🚀 Features
+
+- Users can **set their weekly availability** (e.g. Monday 10 AM - 1 PM)
+- Guest users can **book time slots** (15m, 30m, 45m, 1hr)
+- Bookings **cannot overlap** with existing ones
+- All endpoints follow RESTful architecture
+- Uses **SQLite** as the database
+- **Swagger UI** for easy API testing
+
+---
+
+## ⚙️ Technologies Used
+
+- Python 3.x
+- Django 4.x
+- Django REST Framework
+- drf-yasg (Swagger docs)
+- SQLite (default Django DB)
+
+---
+
+## 📂 Project Structure
+
+```
+
+booking-system/
+├── api/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   └── urls.py
+├── booking\_system/
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+└── README.md
+
+````
+
+---
+
+## 🛠️ Setup Instructions
+
+1. **Clone the repo**
+```bash
+git clone https://github.com/Panku1080/booking-system.git
+cd booking-system
+````
+
+2. **Create virtual environment**
+
+```bash
+python -m venv env
+env\Scripts\activate  # On Windows
+```
+
+3. **Install dependencies**
+
+```bash
+pip install -r requirements.txt
+# Or manually:
+pip install django djangorestframework drf-yasg
+```
+
+4. **Run migrations**
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+5. **Start the server**
+
+```bash
+python manage.py runserver
+```
+
+6. **Access the API**
+
+* Swagger: [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/swagger/)
+* Availabilities: `http://127.0.0.1:8000/api/availabilities/`
+* Bookings: `http://127.0.0.1:8000/api/bookings/`
+
+---
+
+## 🔄 API Endpoints
+
+### 1. `POST /api/availabilities/`
+
+```json
+{
+  "user": "John",
+  "weekday": "Monday",
+  "start_time": "10:00:00",
+  "end_time": "12:00:00"
+}
+```
+
+### 2. `POST /api/bookings/`
+
+```json
+{
+  "guest_name": "Alice",
+  "date": "2025-08-03",
+  "start_time": "10:15:00",
+  "end_time": "10:45:00"
+}
+```
+
+> Booking will fail if it overlaps with existing ones
+
+---
+
+## 🧪 Bonus: Unit Testing (optional)
+
+Coming soon...
+
+---
+
+## 🧑‍💻 Author
+
+**Pankaj Bharti**
+[GitHub](https://github.com/Panku1080) | [LinkedIn](https://linkedin.com/in/pankaj-bharti-47256b21a)
+
+---
+
+## 📃 License
+
+MIT – Free to use and modify
+
+```
+
+---
+
+Let me know if you’d like to include screenshots or a badge (e.g. Python version, license, etc.), or if you want help pushing this to GitHub now.
+```
